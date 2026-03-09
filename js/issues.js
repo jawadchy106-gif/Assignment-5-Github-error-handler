@@ -4,7 +4,7 @@ const issueCount = document.getElementById("issueCount");
 
 let allIssues = [];
 
-/* ---------------- SPINNER ---------------- */
+
 
 function showSpinner() {
   spinner.classList.remove("hidden");
@@ -16,7 +16,7 @@ function hideSpinner() {
   container.classList.remove("hidden");
 }
 
-/* ---------------- LOAD ISSUES ---------------- */
+
 
 async function loadIssues() {
   showSpinner();
@@ -38,7 +38,7 @@ async function loadIssues() {
   hideSpinner();
 }
 
-/* ---------------- DISPLAY ISSUES ---------------- */
+
 
 function displayIssues(issues) {
   container.innerHTML = "";
@@ -118,7 +118,7 @@ function displayIssues(issues) {
   });
 }
 
-/* ---------------- TAB FILTER ---------------- */
+
 
 function setActive(tab){
 
@@ -165,6 +165,6 @@ hideSpinner()
 
 }
 
-/* ---------------- INITIAL LOAD ---------------- */
+
 
 loadIssues();
