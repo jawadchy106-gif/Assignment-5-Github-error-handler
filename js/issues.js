@@ -120,40 +120,49 @@ function displayIssues(issues) {
 
 /* ---------------- TAB FILTER ---------------- */
 
-function setActive(tab) {
-  document.querySelectorAll(".tabBtn").forEach((btn) => {
-    btn.classList.remove("bg-black", "text-white");
-  });
+function setActive(tab){
 
-  showSpinner();
+document.querySelectorAll(".tabBtn").forEach(btn => {
 
-  setTimeout(() => {
-    if (tab === "all") {
-      document
-        .getElementById("allBtn")
-        .classList.add("bg-black", "text-white");
+btn.classList.remove("bg-purple-600","text-white")
 
-      displayIssues(allIssues);
-    }
+})
 
-    if (tab === "open") {
-      document
-        .getElementById("openBtn")
-        .classList.add("bg-black", "text-white");
+showSpinner()
 
-      displayIssues(allIssues.filter((i) => i.status === "open"));
-    }
+setTimeout(() => {
 
-    if (tab === "closed") {
-      document
-        .getElementById("closedBtn")
-        .classList.add("bg-black", "text-white");
+if(tab === "all"){
 
-      displayIssues(allIssues.filter((i) => i.status === "closed"));
-    }
+document.getElementById("allBtn")
+.classList.add("bg-purple-600","text-white")
 
-    hideSpinner();
-  }, 400);
+displayIssues(allIssues)
+
+}
+
+if(tab === "open"){
+
+document.getElementById("openBtn")
+.classList.add("bg-purple-600","text-white")
+
+displayIssues(allIssues.filter(i => i.status === "open"))
+
+}
+
+if(tab === "closed"){
+
+document.getElementById("closedBtn")
+.classList.add("bg-purple-600","text-white")
+
+displayIssues(allIssues.filter(i => i.status === "closed"))
+
+}
+
+hideSpinner()
+
+},400)
+
 }
 
 /* ---------------- INITIAL LOAD ---------------- */

@@ -44,10 +44,12 @@ Search
 
 <!-- TABS -->
 
-<div class="flex gap-4 mb-6">
+<div class="bg-white p-4 rounded-lg shadow mb-6">
+
+<div class="flex gap-4">
 
 <button id="allBtn"
-class="tabBtn bg-black text-white px-4 py-2 rounded"
+class="tabBtn bg-purple-600 text-white px-4 py-2 rounded-lg transition"
 onclick="setActive('all')">
 
 All
@@ -55,7 +57,7 @@ All
 </button>
 
 <button id="openBtn"
-class="tabBtn border px-4 py-2 rounded"
+class="tabBtn border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition"
 onclick="setActive('open')">
 
 Open
@@ -63,12 +65,14 @@ Open
 </button>
 
 <button id="closedBtn"
-class="tabBtn border px-4 py-2 rounded"
+class="tabBtn border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition"
 onclick="setActive('closed')">
 
 Closed
 
 </button>
+
+</div>
 
 </div>
 
