@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- NAVBAR -->
+
+<div class="bg-white shadow flex justify-between items-center px-6 py-4">
+
+<div class="flex items-center gap-3">
+
+<img src="assets/github-logo.png" class="w-8">
+
+<h2 class="font-bold text-lg">
+GitHub Issue Tracker
+</h2>
+
+</div>
+
+<div class="flex gap-2">
+
+<input id="searchInput"
+class="border px-3 py-2 rounded"
+placeholder="Search issues">
+
+<button onclick="searchIssue()"
+class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="max-w-7xl mx-auto p-6">
+
+
+<!-- TABS -->
+
+<div class="flex gap-4 mb-6">
+
+<button id="allBtn"
+class="tabBtn bg-black text-white px-4 py-2 rounded"
+onclick="setActive('all')">
+
+All
+
+</button>
+
+<button id="openBtn"
+class="tabBtn border px-4 py-2 rounded"
+onclick="setActive('open')">
+
+Open
+
+</button>
+
+<button id="closedBtn"
+class="tabBtn border px-4 py-2 rounded"
+onclick="setActive('closed')">
+
+Closed
+
+</button>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="flex justify-between items-center bg-white p-4 rounded shadow mb-6">
+
+<div class="flex items-center gap-2">
+
+<img src="assets/Aperture.png" class="w-5">
+
+<p class="font-semibold">
+<span id="issueCount">0</span> Issues
+</p>
+
+</div>
+
+<div class="flex gap-6 text-sm">
+
+<span class="flex items-center gap-2">
+
+<span class="w-3 h-3 rounded-full bg-green-500"></span>
+
+Open
+
+</span>
+
+<span class="flex items-center gap-2">
+
+<span class="w-3 h-3 rounded-full bg-purple-500"></span>
+
+Closed
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- SPINNER -->
+
+<div id="spinner" class="hidden text-center mb-6">
+
+<div class="animate-spin rounded-full h-10 w-10 border-b-2 border-black mx-auto"></div>
+
+</div>
+
+
+<!-- GRID -->
+
+<div id="issuesContainer"
+class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+</div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div id="modal"
+class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+
+<div class="bg-white rounded-2xl shadow-xl w-[700px] p-8">
+
+<h2 id="modalTitle"
+class="text-2xl font-bold mb-3"></h2>
+
+<div class="flex items-center gap-2 text-sm mb-4">
+
+<span id="modalStatus"
+class="px-3 py-1 rounded-full text-xs"></span>
+
+<span id="modalAuthor"></span>
+
+<span>•</span>
+
+<span id="modalDate"></span>
+
+</div>
+
+<div id="modalLabels"
+class="flex gap-2 mb-4"></div>
+
+<p id="modalDesc"
+class="text-gray-600 mb-6"></p>
+
+<div class="bg-gray-100 rounded-xl p-4 flex justify-between mb-6">
+
+<div>
+
+<p class="text-sm text-gray-500">
+Assignee:
+</p>
+
+<p id="modalAssignee"
+class="font-semibold"></p>
+
+</div>
+
+<div>
+
+<p class="text-sm text-gray-500">
+Priority:
+</p>
+
+<span id="modalPriority"
+class="px-3 py-1 rounded-full text-white text-xs"></span>
+
+</div>
+
+</div>
+
+<div class="flex justify-end">
+
+<button onclick="closeModal()"
+class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="js/issues.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/search.js"></script>
+
+</body>
+</html>
